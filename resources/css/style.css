@@ -1,0 +1,9 @@
+
+
+#display {
+    -fx-background-color: greenyellow; /* Ovo je primer za boju pozadine */
+}
+
+#equalsBtn{
+    -fx-background-color: hotpink;
+}
