@@ -1,0 +1,15 @@
+#MenuBarID{
+    -fx-background-color: #313c4d;
+}
+
+#TitleID{
+    -fx-alignment: center;
+}
+
+#listaID{
+    -fx-background-color: grey;
+}
+
+#pozadinaID{
+    -fx-background-color: lightgray;
+}
