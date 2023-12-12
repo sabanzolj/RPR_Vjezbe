@@ -2,32 +2,43 @@ package ba.unsa.etf.rpr.lv7_8;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException, FileNotFoundException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/Korisnici.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 700, 400);
-        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
-        stage.setTitle("Korisnici");
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon_logo.png")));
+    public void start(Stage stage) {
+        KorisniciModel korisniciModel = new KorisniciModel();
+        korisniciModel.napuni();
 
-        stage.setScene(scene);
-        stage.setMinWidth(700);
-        stage.setMinHeight(400);
-        stage.setResizable(true);
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Korisnici.fxml"));
+            Controller controller = new Controller(korisniciModel);
+            loader.setController(controller);
+            Parent root = loader.load();
+
+            stage.setTitle("Korisnici");
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+            //stage.setScene(new Scene(root, 700, 400));
+
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon_logo.png")));
+
+            stage.setMinWidth(700);
+            stage.setMinHeight(400);
+            stage.setResizable(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Obradite izuzetak prema potrebi, npr. prikažite poruku o grešci i izađite na prikladan način.
+        }
     }
 
     public static void main(String[] args) {

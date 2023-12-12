@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="pozadinaID" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.lv7_8.Controller">
+<GridPane fx:id="pozadinaID" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"  >
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,7 +62,7 @@
                   </ImageView>
                </children></HBox>
          </children></HBox>
-      <ListView fx:id="listaID" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="330.0" GridPane.rowIndex="1">
+      <ListView fx:id="listaID" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#akcijaIzborKorisnikaID" prefHeight="230.0" prefWidth="330.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </GridPane.margin>
@@ -118,27 +118,27 @@
             </VBox>
             <VBox prefHeight="230.0" prefWidth="267.0">
                <children>
-                  <TextField fx:id="nameID" prefHeight="18.0" prefWidth="166.0">
+                  <TextField fx:id="txtFldNameID" prefHeight="18.0" prefWidth="166.0">
                      <VBox.margin>
                         <Insets right="5.0" top="35.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="lastnameID">
+                  <TextField fx:id="txtFldLastNameID">
                      <VBox.margin>
                         <Insets right="5.0" top="12.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="mailID">
+                  <TextField fx:id="txtFldMailID">
                      <VBox.margin>
                         <Insets right="5.0" top="12.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="usernameID">
+                  <TextField fx:id="txtFldUsernameID">
                      <VBox.margin>
                         <Insets right="5.0" top="12.0" />
                      </VBox.margin>
                   </TextField>
-                  <PasswordField fx:id="passwordID">
+                  <PasswordField fx:id="txtFldPasswordID">
                      <VBox.margin>
                         <Insets right="5.0" top="12.0" />
                      </VBox.margin>
@@ -152,7 +152,7 @@
       </HBox>
       <ButtonBar prefHeight="110.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
         <buttons>
-          <Button fx:id="addBtnID" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Dodaj" />
+          <Button fx:id="addBtnID" mnemonicParsing="false" onAction="#akcijaButtonDodaj" prefHeight="26.0" prefWidth="166.0" text="Dodaj" />
             <Button fx:id="endBtnID" mnemonicParsing="false" onAction="#akcijaButtonIzlaz" text="Kraj" />
         </buttons>
          <GridPane.margin>
