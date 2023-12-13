@@ -131,11 +131,11 @@ public class Controller {
     public void akcijaIzborKorisnikaID(MouseEvent mouseEvent) {
         listaID.refresh();
         model.setTrenutniKorisnik(listaID.getSelectionModel().getSelectedItem());
-        if(model.getTrenutniKorisnik().getName()=="Saban"){
+        /*if(model.getTrenutniKorisnik().getName()=="Saban"){
             System.out.println("Izabran Saban");
         }
         else if(model.getTrenutniKorisnik().getName()=="Adil"){
             System.out.println("Izabran Adil");
-        }
+        }*/
     }
 }
